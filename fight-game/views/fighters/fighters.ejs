@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+    <section id="fighter-detail-section">
+        <a href="fighters/new"><button id="sign-fighter-button">Sign Fighter</button></a>
+        <br><br>
+        <section id="fighter-page">
+            <% for (let fighter of fighters) { %>
+                <section id="fighter-section">
+                    <img id="fighter-image" src=<%=fighter.image%>>
+                    <br>
+                    <a href='/fighters/<%=fighter._id%>'>
+                        <%=fighter.name%>
+                    </a>
+                </section>
+                <br><br>
+                <% } %>
+        </section>
+    </section>
+
+    <%- include('../partials/footer') %>
