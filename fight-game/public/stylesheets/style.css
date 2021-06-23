@@ -194,6 +194,10 @@ nav > a.active {
   width: 500px;
 }
 
+#fighter-detail-section > #product-image {
+  width: 200px;
+}
+
 #release-fighter-button {
   width: 50%;
   height: 10%;
@@ -318,6 +322,11 @@ nav > a.active {
 
 #each-product-section > img {
   width: 300px;
+}
+
+#each-product-section > #point-for-product {
+  margin: -5px 0px 0px 0px;
+  color: green;
 }
 
 #main-event > h1 {

@@ -20,7 +20,7 @@
     <br>
     <h1>Training Equipment:</h1>
     <% for (p of fighter.products) { %>
-        <img src=<%=p.image%>>
+        <img id="product-image" src=<%=p.image%>>
     <% } %>
     <form class="delete-product" action="/fighters/<%=fighter._id%>/product?_method=DELETE" method="POST">
         <a href="/fighters/<%=fighter._id%>"><button id="release-fighter-button">Remove Equipment</button></a>

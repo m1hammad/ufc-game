@@ -7,7 +7,6 @@ module.exports = {
 
 let Fighter = require('../models/fighter');
 let Event = require('../models/event');
-const { renderFile } = require('ejs');
 
 function index(req, res, next) {
     Event.find({}, function(err, event) {
@@ -40,8 +39,8 @@ async function create(req, res, next) {
 
 async function simulateMatch(req, res, next) {
     let redCount = 0, blueCount = 0;
-    let wrestling = "https://i.dlpng.com/static/png/202912_preview.png";
-    let jiuJitsu = "https://i.dlpng.com/static/png/7240903_preview.png";
+    let wrestling = "https://country1053.net/wp-content/uploads/sites/4/2018/02/wrestlinglogo-copy1.png";
+    let jiuJitsu = "https://www.pngkey.com/png/full/581-5813381_bjj-brazilian-jiu-jitsu.png";
     
     Event.find({}, await function(err, events){
         Fighter.find({name: events[0].redCorner[0].name}, function(err, redFighter){

@@ -30,7 +30,15 @@
                 <%=product.name%>
                 <br>
                 <%=product.price%>
-                <br>
+                <% let points; %>
+                <%if (product.name === "BJJ") { %>
+                    <%points = "+3"%>
+                <% } else if (product.name === "Wrestling") { %>
+                    <%points = "+4"%>
+                <% } else { %>
+                    <%points = "+1"%>
+                <% } %>
+                <h1 id="point-for-product"><%=points%></h1>
             </section>
             <br><br>
         <% } %>
