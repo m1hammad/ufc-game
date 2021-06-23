@@ -9,7 +9,7 @@
             <img src=<%=event[0].blueCorner[0].image%>><img src=<%=event[0].redCorner[0].image%>>
             <br>
             <h1>Winner:</h1>
-            <img src=<%=event[0].winner[0].image%>>
+            <img src=<%=event[0].winner%>>
             <form id="new-fighter-form" action="/event/match" method="POST">
                 <button id="release-fighter-button">Simulate</button>
             </form>
