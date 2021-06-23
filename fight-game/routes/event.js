@@ -7,5 +7,6 @@ var eventsCtrl = require('../controllers/event');
 router.get('/', eventsCtrl.index)
 router.get('/new', eventsCtrl.new);
 router.post('/', eventsCtrl.create);
+router.post('/match', eventsCtrl.simulate);
 
 module.exports = router;

@@ -1,11 +1,5 @@
 <%- include('../partials/header') %>
 
-    <script>
-        let bufferAudio = new Audio('music/brucebuffer.mp3');
-        bufferAudio.play();
-        bufferAudio.volume = 0.2;
-    </script>
-
     <section id="fighter-detail-section">
 
         <img id="fight-night-logo" src="https://iconape.com/wp-content/png_logo_vector/ufc-fight-night-logo.png">
@@ -13,9 +7,15 @@
         <h1> 5-Round Main-Event: </h1>
         <section id="main-event">
             <img src=<%=event[0].blueCorner[0].image%>><img src=<%=event[0].redCorner[0].image%>>
+            <br>
+            <h1>Winner:</h1>
+            <img src=<%=event[0].winner[0].image%>>
+            <form id="new-fighter-form" action="/event/match" method="POST">
+                <button id="release-fighter-button">Simulate</button>
+            </form>
         </section>
         <hr>
         <a href="/event/new"><button id="release-fighter-button">New Event</button></a>
     </section>
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

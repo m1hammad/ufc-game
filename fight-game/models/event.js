@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   redCorner: [Object],
   blueCorner: [Object],
+  winner: [Object],
 }, {
   timestamps: true
 });

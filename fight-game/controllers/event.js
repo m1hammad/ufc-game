@@ -2,6 +2,7 @@ module.exports = {
     index,
     create,
     new: newEvent,
+    simulate: simulateMatch,
 }
 
 let Fighter = require('../models/fighter');
@@ -32,3 +33,16 @@ function create(req, res, next) {
         });
     });
 };
+
+function simulateMatch(req, res, next) {
+    Event.find({}, function(err, events) {
+        var winner = Math.random() < 0.5 ? "Red" : "Blue";
+        if (winner==="Red") {
+            events[0].winner = events[0].redCorner[0];
+        } else if (winner==="Blue") {
+            events[0].winner = events[0].blueCorner[0];
+        }
+        events[0].save();
+    });
+    res.redirect('/event');
+}
