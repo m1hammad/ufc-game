@@ -25,7 +25,7 @@ The event winners are simulated based on their training. Have they received adeq
 
 ## Getting Started
 
-The app can be accessed [here](https://pages.git.generalassemb.ly/martinnicola/project-1-checkers/).
+The app can be accessed [here](https://mma-fight-game.herokuapp.com/).
 
 ## Future Work
 
