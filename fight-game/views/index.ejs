@@ -18,19 +18,22 @@
 <body id="conor-background">
 
   <nav>
-    <a href="/"><img id="ufc-logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/UFC_Logo.png/800px-UFC_Logo.png"></a>
-    <a href="/fighters">FIGHTERS</a>
-    <a href="/champions">CHAMPIONS</a>
-    <a href="/event/new">CREATE EVENT</a>
-    <a href="/store">STORE</a>
+    <% if (user) { %>
+      <a href="/"><img id="ufc-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/UFC_Logo.png/800px-UFC_Logo.png"></a>
+      <a href="/fighters">FIGHTERS</a>
+      <a href="/champions">CHAMPIONS</a>
+      <a href="/event/new">CREATE EVENT</a>
+      <a href="/store">STORE</a>
+
+      <a href="/logout"><i class="material-icons left"></i>SIGN OUT</a>
+    <% } else { %>
+      <img id="ufc-logo">
+      <a href="/auth/google"><i class="material-icons left"></i>SIGN IN</a>
+    <% } %>
   </nav>
   <main>
     <section id="start-up">
       <img id="game-logo" src="images/game-logo.png">
-      <a id="get-started-link" href="/fighters">
-        <h1 id="get-started-link">Get Started</h1>
-      </a>
     </section>
   </main>
 </body>

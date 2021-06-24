@@ -1,21 +1,23 @@
 <%- include('../partials/header') %>
 
-<section id="new-fighter-form-section">
-    <form id="new-fighter-form" action="/store" method="POST">
-        <label>Name</label>
-        <br><br>
-        <input name="name" placeholder="4 Ounce Gloves">
-        <br><br>
-        <label>Price</label>
-        <br><br>
-        <input name="price" placeholder="$39.99">
-        <br><br>
-        <label>Image</label>
-        <br><br>
-        <input name="image" placeholder="PNG image URL here">
-        <br><br>
-        <button id="sign-fighter-button">Add To Inventory</button>
-    </form>
-</section>
+    <%if (user) { %>
+        <section id="new-fighter-form-section">
+            <form id="new-fighter-form" action="/store" method="POST">
+                <label>Name</label>
+                <br><br>
+                <input name="name" placeholder="4 Ounce Gloves">
+                <br><br>
+                <label>Price</label>
+                <br><br>
+                <input name="price" placeholder="$39.99">
+                <br><br>
+                <label>Image</label>
+                <br><br>
+                <input name="image" placeholder="PNG image URL here">
+                <br><br>
+                <button id="sign-fighter-button">Add To Inventory</button>
+            </form>
+        </section>
+        <% } %>
 
-<%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

@@ -1,48 +1,57 @@
 <%- include('../partials/header') %>
-<section id=store-page>
-    <section id="equip-fighter-section">
-        <form id="equip-fighter-form" action="/store/give" method="POST">
-            <h1>Fighter:</h1>
-            <select name="fighter">
-                <% for (let fighter of fighters) { %>
-                    <option><%=fighter.name%></option>
-                <% } %>
-            </select>
-            <br>
-            <h1>Product:</h1>
-            <select id="equip-selection" name="product">
-                <% for (let product of products) { %>
-                    <option><%=product.name%></option>
-                <% } %>
-            </select>
-            <br>
-            <button id="equip-fighter-button">Equip Fighter</button>
-        </form>
-    </section>
 
-    <section id="products-section">
-        <a href="store/new"><button id="add-product-button">Add Product</button></a>
-        <br><br>
-        <% for (let product of products) { %>
-            <section id="each-product-section">
-                <img id="fighter-image" src=<%=product.image%>>
-                <br>
-                <%=product.name%>
-                <br>
-                <%=product.price%>
-                <% let points; %>
-                <%if (product.name === "BJJ") { %>
-                    <%points = "+3"%>
-                <% } else if (product.name === "Wrestling") { %>
-                    <%points = "+4"%>
-                <% } else { %>
-                    <%points = "+1"%>
-                <% } %>
-                <h1 id="point-for-product"><%=points%></h1>
+    <%if (user) { %>
+        <section id=store-page>
+            <section id="equip-fighter-section">
+                <form id="equip-fighter-form" action="/store/give" method="POST">
+                    <h1>Fighter:</h1>
+                    <select name="fighter">
+                        <% for (let fighter of fighters) { %>
+                            <option>
+                                <%=fighter.name%>
+                            </option>
+                            <% } %>
+                    </select>
+                    <br>
+                    <h1>Product:</h1>
+                    <select id="equip-selection" name="product">
+                        <% for (let product of products) { %>
+                            <option>
+                                <%=product.name%>
+                            </option>
+                            <% } %>
+                    </select>
+                    <br>
+                    <button id="equip-fighter-button">Equip Fighter</button>
+                </form>
             </section>
-            <br><br>
-        <% } %>
-    </section>
-</section>
 
-<%- include('../partials/footer') %>
+            <section id="products-section">
+                <a href="store/new"><button id="add-product-button">Add Product</button></a>
+                <br><br>
+                <% for (let product of products) { %>
+                    <section id="each-product-section">
+                        <img id="fighter-image" src=<%=product.image%>>
+                        <br>
+                        <%=product.name%>
+                            <br>
+                            <%=product.price%>
+                                <% let points; %>
+                                    <%if (product.name==="BJJ" ) { %>
+                                        <%points="+3" %>
+                                            <% } else if (product.name==="Wrestling" ) { %>
+                                                <%points="+4" %>
+                                                    <% } else { %>
+                                                        <%points="+1" %>
+                                                            <% } %>
+                                                                <h1 id="point-for-product">
+                                                                    <%=points%>
+                                                                </h1>
+                    </section>
+                    <br><br>
+                    <% } %>
+            </section>
+        </section>
+        <% } %>
+
+            <%- include('../partials/footer') %>

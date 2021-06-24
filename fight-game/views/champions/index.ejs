@@ -1,15 +1,17 @@
 <%- include('../partials/header') %>
 
-<br><br>
-<section id="fighter-detail-section">
-    <% for (let champion of champions) { %>
-        <!-- <section id="fighter-section"> -->
-            <img id="fighter-image" src=<%=champion.image%>>
-            <h1><%=champion.name%></h1>
-            <%=champion.weight%> lbs
-        <!-- </section> -->
-        <br><br>
-    <% } %>
-</section>
+<%if (user) { %>
+    <br><br>
+    <section id="fighter-detail-section">
+        <% for (let champion of champions) { %>
+            <!-- <section id="fighter-section"> -->
+                <img id="fighter-image" src=<%=champion.image%>>
+                <h1><%=champion.name%></h1>
+                <%=champion.weight%> lbs
+            <!-- </section> -->
+            <br><br>
+        <% } %>
+    </section>
+<% } %>
 
 <%- include('../partials/footer') %>

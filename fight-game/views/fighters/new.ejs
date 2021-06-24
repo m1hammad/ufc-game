@@ -1,36 +1,38 @@
 <%- include('../partials/header') %>
-<section id="new-fighter-form-section">
-    <form id="new-fighter-form" action="/fighters" method="POST">
-        <label>Name</label>
-        <br><br>
-        <input name="name" placeholder="Conor McGregor">
-        <br><br>
-        <label>Weight</label>
-        <br><br>
-        <input name="weight" placeholder="170">
-        <br><br>
-        <label>Age</label>
-        <br><br>
-        <input name="age" placeholder="32">
-        <br><br>
-        <label>Description</label>
-        <br><br>
-        <input name="description" placeholder="Write a description here in full sentences">
-        <br><br>
-        <label>Image</label>
-        <br><br>
-        <input name="image" placeholder="PNG image URL here">
-        <br><br>
-        <label>Fight Record</label>
-        <br><br>
-        <input name="record" placeholder="22-5-0">
-        <br><br>
-        <label>Champion</label>
-        <br><br>
-        <input name="isChampion" placeholder="false">
-        <br><br>
-        <button id="sign-fighter-button">Sign</button>
-    </form>
-</section>
+    <%if (user) { %>
+        <section id="new-fighter-form-section">
+            <form id="new-fighter-form" action="/fighters" method="POST">
+                <label>Name</label>
+                <br><br>
+                <input name="name" placeholder="Conor McGregor">
+                <br><br>
+                <label>Weight</label>
+                <br><br>
+                <input name="weight" placeholder="170">
+                <br><br>
+                <label>Age</label>
+                <br><br>
+                <input name="age" placeholder="32">
+                <br><br>
+                <label>Description</label>
+                <br><br>
+                <input name="description" placeholder="Write a description here in full sentences">
+                <br><br>
+                <label>Image</label>
+                <br><br>
+                <input name="image" placeholder="PNG image URL here">
+                <br><br>
+                <label>Fight Record</label>
+                <br><br>
+                <input name="record" placeholder="22-5-0">
+                <br><br>
+                <label>Champion</label>
+                <br><br>
+                <input name="isChampion" placeholder="false">
+                <br><br>
+                <button id="sign-fighter-button">Sign</button>
+            </form>
+        </section>
+    <% } %>
 
 <%- include('../partials/footer') %>

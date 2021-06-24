@@ -17,6 +17,7 @@ const fighterSchema = new Schema({
   record: String,
   isChampion: Boolean,
   products: [productSchema],
+  creator: String,
 }, {
   timestamps: true
 });

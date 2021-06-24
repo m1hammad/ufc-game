@@ -1,28 +1,34 @@
 <%- include('../partials/header') %>
 
-<section id="fighter-detail-section">
+    <%if (user) { %>
+        <section id="fighter-detail-section">
 
-<img id="fight-night-logo" src="https://iconape.com/wp-content/png_logo_vector/ufc-fight-night-logo.png">
+            <img id="fight-night-logo" src="https://iconape.com/wp-content/png_logo_vector/ufc-fight-night-logo.png">
 
-<h1> 5-Round Main-Event: </h1>
+            <h1> 5-Round Main-Event: </h1>
 
-<form id="new-fighter-form" action="/event/" method="POST">
-    <select name="redMain">
-        <% for (let fighter of fighters) { %>
-            <option><%=fighter.name%></option>
-        <% } %>
-    </select>
-    <select name="blueMain">
-        <% for (let fighter of fighters) { %>
-            <option><%=fighter.name%></option>
-        <% } %>
-    </select>
-    <a href="/event"><button id="release-fighter-button">Set Main Event</button></a>
-    <br>
-</form>
+            <form id="new-fighter-form" action="/event/" method="POST">
+                <select name="redMain">
+                    <% for (let fighter of fighters) { %>
+                        <option>
+                            <%=fighter.name%>
+                        </option>
+                    <% } %>
+                </select>
+                <select name="blueMain">
+                    <% for (let fighter of fighters) { %>
+                        <option>
+                            <%=fighter.name%>
+                        </option>
+                    <% } %>
+                </select>
+                <a href="/event"><button id="release-fighter-button">Set Main Event</button></a>
+                <br>
+            </form>
 
-<hr>
+            <hr>
 
-</section>
+        </section>
+    <% } %>
 
 <%- include('../partials/footer') %>

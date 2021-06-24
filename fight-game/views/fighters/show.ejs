@@ -1,37 +1,41 @@
 <%- include('../partials/header') %>
-<section id="fighter-detail-section">
-    <img src=<%=fighter.image%>>
-    <h1>Name:</h1>
-    <%=fighter.name%>
-    <br>
-    <h1>Weight:</h1>
-    <%=fighter.weight%>
-    <h1>Age:</h1> 
-    <%=fighter.age%>
-    <br>
-    <h1>MMA Record:</h1> 
-    <%=fighter.record%>
-    <br>
-    <h1>Description:</h1>
-    <%=fighter.description%>
-    <br>
-    <h1>Champion Status:</h1>
-    <%=fighter.isChampion ? "Yes" : "No"%>
-    <br>
-    <h1>Training Equipment:</h1>
-    <% for (p of fighter.products) { %>
-        <img id="product-image" src=<%=p.image%>>
-    <% } %>
-    <form class="delete-product" action="/fighters/<%=fighter._id%>/product?_method=DELETE" method="POST">
-        <a href="/fighters/<%=fighter._id%>"><button id="release-fighter-button">Remove Equipment</button></a>
-    </form>
-    <br><br>
-    <section>
-        <a href="/fighters/<%=fighter._id%>/edit"><button id="update-fighter-button">Update Bio</button></a>
-        <form class="delete-fighter" action="/fighters/<%=fighter._id%>?_method=DELETE" method="POST">
-            <button id="release-fighter-button" type="submit">Release Fighter</button>
+<%if (user) { %>
+    <section id="fighter-detail-section">
+        <img src=<%=fighter.image%>>
+        <h1>Name:</h1>
+        <%=fighter.name%>
+        <br>
+        <h1>Weight:</h1>
+        <%=fighter.weight%>
+        <h1>Age:</h1>
+        <%=fighter.age%>
+        <br>
+        <h1>MMA Record:</h1>
+        <%=fighter.record%>
+        <br>
+        <h1>Description:</h1>
+        <%=fighter.description%>
+        <br>
+        <h1>Champion Status:</h1>
+        <%=fighter.isChampion ? "Yes" : "No" %>
+        <br>
+        <h1>Training Equipment:</h1>
+        <% for (p of fighter.products) { %>
+            <img id="product-image" src=<%=p.image%>>
+        <% } %>
+        <% if (fighter.creator === user.name) { %>
+        <form class="delete-product" action="/fighters/<%=fighter._id%>/product?_method=DELETE" method="POST">
+            <a href="/fighters/<%=fighter._id%>"><button id="release-fighter-button">Remove Equipment</button></a>
         </form>
+        <br><br>
+        <section>
+            <a href="/fighters/<%=fighter._id%>/edit"><button id="update-fighter-button">Update Bio</button></a>
+            <form class="delete-fighter" action="/fighters/<%=fighter._id%>?_method=DELETE" method="POST">
+                <button id="release-fighter-button" type="submit">Release Fighter</button>
+            </form>
+        <% } %>
+        </section>
     </section>
-</section>
+<% } %>
 
 <%- include('../partials/footer') %>

@@ -9,27 +9,38 @@ let Store = require('../models/store');
 let Fighter = require('../models/fighter');
 
 function index(req, res, next) {
-    Store.find({}, function(err, products) {
-        let fighters = Fighter.find({}, function(err, fighters){
-            res.render('store/index', { products, fighters });
-      });
+    Store.find({}, function (err, products) {
+        let fighters = Fighter.find({}, function (err, fighters) {
+            res.render('store/index',
+                {
+                    products,
+                    fighters,
+                    user: req.user,
+                    name: req.query.name,
+                });
+        });
     })
 }
 
-function newProduct(req, res, next){
-    res.render('store/new');
+function newProduct(req, res, next) {
+    res.render('store/new',
+        {
+            user: req.user,
+            name: req.query.name,
+        }
+    );
 }
 
-function addProduct(req, res, next){
+function addProduct(req, res, next) {
     let product = new Store(req.body);
     product.save();
     res.redirect('/store');
 }
 
-function giveProduct(req, res, next){
+function giveProduct(req, res, next) {
     console.log(req.body, req.body.fighter, req.body.product)
-    Fighter.find({name: req.body.fighter}, function(err, fighter) {     
-        Store.find({name: req.body.product}, function(err, product) {
+    Fighter.find({ name: req.body.fighter }, function (err, fighter) {
+        Store.find({ name: req.body.product }, function (err, product) {
             console.log("fighter is", fighter[0]);
             console.log("fighter record is", fighter[0].record);
             console.log("fighter products array is", fighter[0].products);

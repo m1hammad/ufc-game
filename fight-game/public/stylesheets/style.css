@@ -35,7 +35,7 @@ nav > a {
   padding: 10px;
   border-radius: 5px;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   margin-right: auto;
 }
@@ -173,6 +173,10 @@ nav > a.active {
 #fighter-page > a:hover {
   background-color: white;
   color: black;
+}
+
+#fighter-page > h6 {
+  color: green;
 }
 
 #fighter-detail-section {

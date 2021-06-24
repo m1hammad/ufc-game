@@ -1,30 +1,34 @@
 <%- include('../partials/header') %>
 
-    <audio controls autoplay>
-        <source src="music/sickomodeclean.mp3">
-    </audio>
+    <%if (user) { %>
+        <audio controls autoplay>
+            <source src="music/sickomodeclean.mp3">
+        </audio>
 
-    <script>
-        let audioEl = document.querySelector('audio');
-        audioEl.volume = 0.05;
-        audioEl.currentTime = 64;
-    </script>
+        <script>
+            let audioEl = document.querySelector('audio');
+            audioEl.volume = 0.05;
+            audioEl.currentTime = 64;
+        </script>
 
-    <section id="fighter-detail-section">
-        <a href="fighters/new"><button id="sign-fighter-button">Sign Fighter</button></a>
-        <br><br>
-        <section id="fighter-page">
-            <% for (let fighter of fighters) { %>
-                <!-- <section id="fighter-section"> -->
+        <section id="fighter-detail-section">
+            <a href="fighters/new"><button id="sign-fighter-button">Sign Fighter</button></a>
+            <br><br>
+            <section id="fighter-page">
+                <% for (let fighter of fighters) { %>
+                    <!-- <section id="fighter-section"> -->
                     <img id="fighter-image" src=<%=fighter.image%>>
                     <br>
                     <a href='/fighters/<%=fighter._id%>'>
                         <%=fighter.name%>
                     </a>
-                <!-- </section> -->
-                <br><br>
+                    <h6>Created by: <%=fighter.creator%></h6>
+                    <!-- </section> -->
+                    <br><br>
                 <% } %>
+            </section>
         </section>
-    </section>
 
-    <%- include('../partials/footer') %>
+    <% } %>
+
+<%- include('../partials/footer') %>

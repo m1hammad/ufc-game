@@ -1,21 +1,33 @@
 <%- include('../partials/header') %>
 
-    <section id="fighter-detail-section">
+    <%if (user) { %>
+        <audio controls autoplay>
+            <source src="music/brucebuffer.mp3">
+        </audio>
 
-        <img id="fight-night-logo" src="https://iconape.com/wp-content/png_logo_vector/ufc-fight-night-logo.png">
+        <script>
+            let audioEl = document.querySelector('audio');
+            audioEl.volume = 0.05;
+            audioEl.currentTime = 40;
+        </script>
 
-        <h1> 5-Round Main-Event: </h1>
-        <section id="main-event">
-            <img src=<%=event[0].blueCorner[0].image%>><img src=<%=event[0].redCorner[0].image%>>
-            <br>
-            <h1>Winner:</h1>
-            <img src=<%=event[0].winner%>>
-            <form id="new-fighter-form" action="/event/match" method="POST">
-                <button id="release-fighter-button">Simulate</button>
-            </form>
+        <section id="fighter-detail-section">
+
+            <img id="fight-night-logo" src="https://iconape.com/wp-content/png_logo_vector/ufc-fight-night-logo.png">
+
+            <h1> 5-Round Main-Event: </h1>
+            <section id="main-event">
+                <img src=<%=event[0].blueCorner[0].image%>><img src=<%=event[0].redCorner[0].image%>>
+                <br>
+                <h1>Winner:</h1>
+                <img src=<%=event[0].winner%>>
+                <form id="new-fighter-form" action="/event/match" method="POST">
+                    <button id="release-fighter-button">Simulate</button>
+                </form>
+            </section>
+            <hr>
+            <a href="/event/new"><button id="release-fighter-button">New Event</button></a>
         </section>
-        <hr>
-        <a href="/event/new"><button id="release-fighter-button">New Event</button></a>
-    </section>
+    <% } %>
 
 <%- include('../partials/footer') %>

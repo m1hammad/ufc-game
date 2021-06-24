@@ -1,17 +1,21 @@
 module.exports = {
-    index,
+  index,
 }
 
 let Fighter = require('../models/fighter');
 
 function index(req, res, next) {
-    Fighter.find({}, function(err, fighters) {
-      let champions = [];
-      for (let f of fighters) {
-          if (f.isChampion === true){
-            champions.push(f);
-          }
+  Fighter.find({}, function (err, fighters) {
+    let champions = [];
+    for (let f of fighters) {
+      if (f.isChampion === true) {
+        champions.push(f);
       }
-      res.render('champions/index', { champions });
+    }
+    res.render('champions/index', {
+      champions,
+      user: req.user,
+      name: req.query.name,
     });
+  });
 }
