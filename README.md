@@ -1,4 +1,4 @@
-# **FACE OF THE FIGHT GAME**
+# **UFC GAME**
 
 The FIGHT GAME, for short, allows a logged in user to sign a fighter with the use of a form or contract. It's tough to be a fighter, but this app makes being a UFC president possible!
 
