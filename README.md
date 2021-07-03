@@ -21,8 +21,10 @@ Are you ready to be a UFC promoter? Are you ready to work hard and pursue your d
 
 ## Technologies Used
 
-- EXPRESS
-- MONGODB
+- Express JS
+- Node JS
+- MongoDB
+- MongoDB Atlas
 - HTML
 - CSS
 - JavaScript
