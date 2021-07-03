@@ -1,6 +1,6 @@
 # **UFC GAME**
 
-The FIGHT GAME, for short, allows a logged in user to sign a fighter with the use of a form or contract. It's tough to be a fighter, but this app makes being a UFC president possible!
+The FIGHT GAME allows a logged in user to sign a fighter with the use of a form or contract. It's tough to be a fighter, but this app makes being a UFC president possible!
 
 With each signing, a fighter's biography can be completely uploaded, including photo, current record, age and so on. They will be on their way to becoming a reigning world's champion.
 
